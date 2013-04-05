@@ -17,6 +17,8 @@ import java.util.List;
 public interface DocumentService {
     DocumentDTO getDocument(@WebParam(name="documentID") String documentID);
 
+    String getDocumentContent(@WebParam(name = "documentID") String documentID);
+
     void save(DocumentDTO documentDTO);
 
     List<DocumentDTO> findAll();
