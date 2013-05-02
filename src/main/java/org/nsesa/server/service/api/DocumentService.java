@@ -15,11 +15,9 @@ import java.util.List;
  */
 @WebService
 public interface DocumentService {
-    DocumentDTO getDocument(@WebParam(name="documentID") String documentID);
+    DocumentDTO getDocument(@WebParam(name = "documentID") String documentID);
 
-    String getDocumentContent(@WebParam(name = "documentID") String documentID);
+    void saveDocument(@WebParam(name = "documentDTO") DocumentDTO documentDTO);
 
-    void save(DocumentDTO documentDTO);
-
-    List<DocumentDTO> findAll();
+    List<DocumentDTO> list(@WebParam(name = "offset") int offset, @WebParam(name = "rows") int rows);
 }
