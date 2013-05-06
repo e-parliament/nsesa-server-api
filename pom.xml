@@ -11,9 +11,7 @@
     <version>0.0.1</version>
 
     <properties>
-        <gwt.version>2.5.0</gwt.version>
         <spring.version>3.1.0.RELEASE</spring.version>
-        <gwtplugin.version>2.5.0</gwtplugin.version>
         <jdk.source>1.6</jdk.source>
         <jdk.target>1.6</jdk.target>
 
