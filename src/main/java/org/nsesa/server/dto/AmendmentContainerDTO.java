@@ -30,20 +30,26 @@ import java.util.ArrayList;
 @Dto
 public class AmendmentContainerDTO implements Serializable {
 
+    /**
+     * A reference to the person ID this amendment was made on.
+     */
     @DtoVirtualField(converter = "personIDConvertor")
     private String personID;
 
+    /**
+     * A reference to the document ID this amendment was made on.
+     */
     @DtoVirtualField(converter = "documentIDConvertor")
     private String documentID;
 
     /**
-     * The primary key that uniquely identifies an amendment container revision.
+     * The primary key that identifies a logical amendment container.
      */
     @DtoField
     private String amendmentContainerID;
 
     /**
-     * A revision key that identifies all amendment revisions for a single, logical amendment.
+     * A revision key that uniquely identifies this version.
      */
     @DtoField
     private String revisionID;
