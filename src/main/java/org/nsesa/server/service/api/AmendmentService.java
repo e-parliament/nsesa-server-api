@@ -15,14 +15,18 @@ import java.util.List;
  */
 @WebService
 public interface AmendmentService {
+
     AmendmentContainerDTO getAmendmentContainer(@WebParam(name = "amendmentContainerID") String amendmentContainerID);
+
+    AmendmentContainerDTO getAmendmentContainerVersion(@WebParam(name = "revisionID") String revisionID);
 
     List<AmendmentContainerDTO> getAmendmentContainersByDocumentAndPerson(
             @WebParam(name = "documentID") String documentID,
             @WebParam(name = "personID") String personID);
 
-    List<AmendmentContainerDTO> getAmendmentContainersByDocument(
-            @WebParam(name = "documentID") String documentID);
+    List<AmendmentContainerDTO> getAmendmentContainersByDocument(@WebParam(name = "documentID") String documentID);
+
+    List<String> getAmendmentContainerVersions(@WebParam(name = "amendmentContainerID") String amendmentContainerID);
 
     AmendmentContainerDTO save(@WebParam(name = "amendmentContainer") AmendmentContainerDTO amendmentContainer);
 
