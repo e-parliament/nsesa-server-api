@@ -2,6 +2,9 @@ package org.nsesa.server.service.api;
 
 
 import org.nsesa.server.dto.AmendmentContainerDTO;
+import org.nsesa.server.exception.ResourceNotFoundException;
+import org.nsesa.server.exception.StaleResourceException;
+import org.nsesa.server.exception.ValidationException;
 
 import javax.jws.WebParam;
 import javax.jws.WebService;
@@ -28,7 +31,8 @@ public interface AmendmentService {
 
     List<String> getAmendmentContainerVersions(@WebParam(name = "amendmentContainerID") String amendmentContainerID);
 
-    AmendmentContainerDTO save(@WebParam(name = "amendmentContainer") AmendmentContainerDTO amendmentContainer);
+    AmendmentContainerDTO save(@WebParam(name = "amendmentContainer") AmendmentContainerDTO amendmentContainer)
+            throws StaleResourceException, ResourceNotFoundException, ValidationException;
 
     void delete(final @WebParam(name = "amendmentContainerID") String amendmentContainerID);
 }
