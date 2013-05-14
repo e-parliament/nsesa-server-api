@@ -83,7 +83,7 @@ public class AmendmentContainerDTO implements Serializable {
      * A reference to the source of this this amendment (meaning, the place where the amendment should be injected upon)
      */
     @DtoVirtualField(converter = "amendableWidgetReferenceConvertor")
-    private AmendableWidgetReference sourceReference;
+    private AmendableWidgetReferenceDTO sourceReference;
 
     /**
      * A list of one or more target references - which will be impacted by this amendment. For example, if an amendment
@@ -92,7 +92,7 @@ public class AmendmentContainerDTO implements Serializable {
      * <p/>
      * TODO the target references are not yet supported
      */
-    private ArrayList<AmendableWidgetReference> targetReferences = new ArrayList<AmendableWidgetReference>();
+    private ArrayList<AmendableWidgetReferenceDTO> targetReferences = new ArrayList<AmendableWidgetReferenceDTO>();
 
     public AmendmentContainerDTO() {
     }
@@ -148,19 +148,19 @@ public class AmendmentContainerDTO implements Serializable {
         this.amendmentContainerStatus = amendmentContainerStatus;
     }
 
-    public AmendableWidgetReference getSourceReference() {
+    public AmendableWidgetReferenceDTO getSourceReference() {
         return sourceReference;
     }
 
-    public void setSourceReference(AmendableWidgetReference sourceReference) {
+    public void setSourceReference(AmendableWidgetReferenceDTO sourceReference) {
         this.sourceReference = sourceReference;
     }
 
-    public ArrayList<AmendableWidgetReference> getTargetReferences() {
+    public ArrayList<AmendableWidgetReferenceDTO> getTargetReferences() {
         return targetReferences;
     }
 
-    public void setTargetReferences(ArrayList<AmendableWidgetReference> targetReferences) {
+    public void setTargetReferences(ArrayList<AmendableWidgetReferenceDTO> targetReferences) {
         this.targetReferences = targetReferences;
     }
 
