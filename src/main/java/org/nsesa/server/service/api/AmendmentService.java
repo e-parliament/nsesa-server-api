@@ -2,6 +2,7 @@ package org.nsesa.server.service.api;
 
 
 import org.nsesa.server.dto.AmendmentContainerDTO;
+import org.nsesa.server.dto.RevisionDTO;
 import org.nsesa.server.exception.ResourceNotFoundException;
 import org.nsesa.server.exception.StaleResourceException;
 import org.nsesa.server.exception.ValidationException;
@@ -29,7 +30,7 @@ public interface AmendmentService {
 
     List<AmendmentContainerDTO> getAmendmentContainersByDocument(@WebParam(name = "documentID") String documentID) throws ResourceNotFoundException;
 
-    List<String> getAmendmentContainerVersions(@WebParam(name = "amendmentContainerID") String amendmentContainerID);
+    List<RevisionDTO> getAmendmentContainerVersions(@WebParam(name = "amendmentContainerID") String amendmentContainerID);
 
     AmendmentContainerDTO save(@WebParam(name = "amendmentContainer") AmendmentContainerDTO amendmentContainer)
             throws StaleResourceException, ResourceNotFoundException, ValidationException;
