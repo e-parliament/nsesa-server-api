@@ -21,14 +21,14 @@ import java.io.Serializable;
 /**
  * A reference to find the correct
  * widget to amend, and used when passing information when creating a new element.
- *
+ * <p/>
  * Date: 10/07/12 22:34
  *
  * @author <a href="mailto:philip.luppens@gmail.com">Philip Luppens</a>
  * @version $Id$
  */
 @Dto
-public class AmendableWidgetReference implements Serializable {
+public class AmendableWidgetReferenceDTO implements Serializable {
 
     @DtoField
     private String referenceID;
@@ -68,19 +68,19 @@ public class AmendableWidgetReference implements Serializable {
     @DtoField
     private int offset;
 
-    public AmendableWidgetReference() {
+    public AmendableWidgetReferenceDTO() {
     }
 
-    public AmendableWidgetReference(String path) {
+    public AmendableWidgetReferenceDTO(String path) {
         this.path = path;
     }
 
-    public AmendableWidgetReference(String path, String namespaceURI) {
+    public AmendableWidgetReferenceDTO(String path, String namespaceURI) {
         this.path = path;
         this.namespaceURI = namespaceURI;
     }
 
-    public AmendableWidgetReference(boolean creation, boolean sibling, String path, String type, int offset) {
+    public AmendableWidgetReferenceDTO(boolean creation, boolean sibling, String path, String type, int offset) {
         this.creation = creation;
         this.sibling = sibling;
         this.path = path;
@@ -88,7 +88,7 @@ public class AmendableWidgetReference implements Serializable {
         this.offset = offset;
     }
 
-    public AmendableWidgetReference(boolean creation, boolean sibling, String namespaceURI, String path, String type, int offset) {
+    public AmendableWidgetReferenceDTO(boolean creation, boolean sibling, String namespaceURI, String path, String type, int offset) {
         this.creation = creation;
         this.sibling = sibling;
         this.namespaceURI = namespaceURI;

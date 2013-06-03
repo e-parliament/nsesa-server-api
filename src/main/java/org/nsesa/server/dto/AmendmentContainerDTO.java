@@ -30,20 +30,26 @@ import java.util.ArrayList;
 @Dto
 public class AmendmentContainerDTO implements Serializable {
 
+    /**
+     * A reference to the person ID this amendment was made on.
+     */
     @DtoVirtualField(converter = "personIDConvertor")
     private String personID;
 
+    /**
+     * A reference to the document ID this amendment was made on.
+     */
     @DtoVirtualField(converter = "documentIDConvertor")
     private String documentID;
 
     /**
-     * The primary key that uniquely identifies an amendment container revision.
+     * The primary key that identifies a logical amendment container.
      */
     @DtoField
     private String amendmentContainerID;
 
     /**
-     * A revision key that identifies all amendment revisions for a single, logical amendment.
+     * A revision key that uniquely identifies this version.
      */
     @DtoField
     private String revisionID;
@@ -77,7 +83,7 @@ public class AmendmentContainerDTO implements Serializable {
      * A reference to the source of this this amendment (meaning, the place where the amendment should be injected upon)
      */
     @DtoVirtualField(converter = "amendableWidgetReferenceConvertor")
-    private AmendableWidgetReference sourceReference;
+    private AmendableWidgetReferenceDTO sourceReference;
 
     /**
      * A list of one or more target references - which will be impacted by this amendment. For example, if an amendment
@@ -86,7 +92,7 @@ public class AmendmentContainerDTO implements Serializable {
      * <p/>
      * TODO the target references are not yet supported
      */
-    private ArrayList<AmendableWidgetReference> targetReferences = new ArrayList<AmendableWidgetReference>();
+    private ArrayList<AmendableWidgetReferenceDTO> targetReferences = new ArrayList<AmendableWidgetReferenceDTO>();
 
     public AmendmentContainerDTO() {
     }
@@ -142,19 +148,19 @@ public class AmendmentContainerDTO implements Serializable {
         this.amendmentContainerStatus = amendmentContainerStatus;
     }
 
-    public AmendableWidgetReference getSourceReference() {
+    public AmendableWidgetReferenceDTO getSourceReference() {
         return sourceReference;
     }
 
-    public void setSourceReference(AmendableWidgetReference sourceReference) {
+    public void setSourceReference(AmendableWidgetReferenceDTO sourceReference) {
         this.sourceReference = sourceReference;
     }
 
-    public ArrayList<AmendableWidgetReference> getTargetReferences() {
+    public ArrayList<AmendableWidgetReferenceDTO> getTargetReferences() {
         return targetReferences;
     }
 
-    public void setTargetReferences(ArrayList<AmendableWidgetReference> targetReferences) {
+    public void setTargetReferences(ArrayList<AmendableWidgetReferenceDTO> targetReferences) {
         this.targetReferences = targetReferences;
     }
 
