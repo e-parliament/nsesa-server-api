@@ -5,6 +5,7 @@ import org.nsesa.server.dto.PersonDTO;
 
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import java.util.List;
 
 /**
  * Date: 11/03/13 15:38
@@ -18,6 +19,8 @@ public interface PersonService {
     PersonDTO getPerson(@WebParam(name = "personID") String personID);
 
     PersonDTO getPersonByUsername(@WebParam(name = "username") String username);
+
+    List<PersonDTO> getPersons(@WebParam(name = "personQuery") String personQuery, int start, int limit);
 
     void save(@WebParam(name = "personDTO") PersonDTO personDTO);
 }
