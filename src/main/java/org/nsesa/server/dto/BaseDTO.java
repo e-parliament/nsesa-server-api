@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Date: 11/03/13 15:30
  *
- * @author <a href="philip.luppens@gmail.com">Philip Luppens</a>
+ * @author <a href="mailto:philip.luppens@gmail.com">Philip Luppens</a>
  * @version $Id$
  */
 public class BaseDTO implements Serializable {
