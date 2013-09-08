@@ -45,7 +45,7 @@ public class DocumentContentDTO implements Serializable {
      * The content type of this document (XML, plain text, JSON, ...)
      */
     @DtoVirtualField(converter = "documentContentTypeConvertor")
-    private String documentContentType;
+    private String documentContentType = "";
 
     public DocumentContentDTO() {
     }
@@ -68,7 +68,7 @@ public class DocumentContentDTO implements Serializable {
     public int hashCode() {
         int result = documentID.hashCode();
         result = 31 * result + (content != null ? content.hashCode() : 0);
-        result = 31 * result + documentContentType.hashCode();
+        result = 31 * result + (documentContentType != null ? documentContentType.hashCode() : 0);
         return result;
     }
 
