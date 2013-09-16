@@ -52,7 +52,7 @@ public class AmendmentContainerDTO implements Serializable {
      * A ordered set of reference to the bundled amendment containers.
      */
     @DtoVirtualField(converter = "bundledAmendmentContainerConvertor")
-    private String[] bundledAmendmentContainerRevisionIDs;
+    private String[] bundledAmendmentContainerIDs;
 
     /**
      * A revision key that uniquely identifies this version.
@@ -218,11 +218,11 @@ public class AmendmentContainerDTO implements Serializable {
         this.personID = personID;
     }
 
-    public String[] getBundledAmendmentContainerRevisionIDs() {
-        return bundledAmendmentContainerRevisionIDs;
+    public String[] getBundledAmendmentContainerIDs() {
+        return bundledAmendmentContainerIDs;
     }
 
-    public void setBundledAmendmentContainerRevisionIDs(String[] bundledAmendmentContainerRevisionIDs) {
-        this.bundledAmendmentContainerRevisionIDs = bundledAmendmentContainerRevisionIDs;
+    public void setBundledAmendmentContainerIDs(String[] bundledAmendmentContainerIDs) {
+        this.bundledAmendmentContainerIDs = bundledAmendmentContainerIDs;
     }
 }
