@@ -1,0 +1,4 @@
+Release 0.4 (26-Jun-2013)
+
+- Small correction to make the offset field in the amendment reference nullable
+- Added a method to retrieve authors via their last name

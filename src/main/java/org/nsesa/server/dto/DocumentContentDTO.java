@@ -15,9 +15,9 @@ package org.nsesa.server.dto;
 
 import com.inspiresoftware.lib.dto.geda.annotations.Dto;
 import com.inspiresoftware.lib.dto.geda.annotations.DtoField;
+import com.inspiresoftware.lib.dto.geda.annotations.DtoVirtualField;
 
 import java.io.Serializable;
-import java.util.Calendar;
 
 /**
  * A Data Transfer Object (DTO) for a non-logical document (eg. translation).
@@ -41,6 +41,12 @@ public class DocumentContentDTO implements Serializable {
     @DtoField
     private String content;
 
+    /**
+     * The content type of this document (XML, plain text, JSON, ...)
+     */
+    @DtoVirtualField(converter = "documentContentTypeConvertor")
+    private String documentContentType = "";
+
     public DocumentContentDTO() {
     }
 
@@ -51,7 +57,8 @@ public class DocumentContentDTO implements Serializable {
 
         DocumentContentDTO that = (DocumentContentDTO) o;
 
-        if (!content.equals(that.content)) return false;
+        if (content != null ? !content.equals(that.content) : that.content != null) return false;
+        if (!documentContentType.equals(that.documentContentType)) return false;
         if (!documentID.equals(that.documentID)) return false;
 
         return true;
@@ -60,7 +67,8 @@ public class DocumentContentDTO implements Serializable {
     @Override
     public int hashCode() {
         int result = documentID.hashCode();
-        result = 31 * result + content.hashCode();
+        result = 31 * result + (content != null ? content.hashCode() : 0);
+        result = 31 * result + (documentContentType != null ? documentContentType.hashCode() : 0);
         return result;
     }
 
@@ -78,5 +86,13 @@ public class DocumentContentDTO implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getDocumentContentType() {
+        return documentContentType;
+    }
+
+    public void setDocumentContentType(String documentContentType) {
+        this.documentContentType = documentContentType;
     }
 }
