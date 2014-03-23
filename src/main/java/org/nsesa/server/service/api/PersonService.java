@@ -1,6 +1,7 @@
 package org.nsesa.server.service.api;
 
 
+import org.nsesa.server.dto.GroupDTO;
 import org.nsesa.server.dto.PersonDTO;
 
 import javax.jws.WebParam;
@@ -23,4 +24,6 @@ public interface PersonService {
     List<PersonDTO> getPersons(@WebParam(name = "personQuery") String personQuery, int start, int limit);
 
     void save(@WebParam(name = "personDTO") PersonDTO personDTO);
+
+    List<GroupDTO> getGroups(@WebParam(name = "personID") String personID);
 }
