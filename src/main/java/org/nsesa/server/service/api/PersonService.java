@@ -24,6 +24,4 @@ public interface PersonService {
     List<PersonDTO> getPersons(@WebParam(name = "personQuery") String personQuery, int start, int limit);
 
     void save(@WebParam(name = "personDTO") PersonDTO personDTO);
-
-    List<GroupDTO> getGroups(@WebParam(name = "personID") String personID);
 }
