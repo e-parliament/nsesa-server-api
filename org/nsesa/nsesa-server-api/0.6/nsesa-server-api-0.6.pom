@@ -8,7 +8,7 @@
     <artifactId>nsesa-server-api</artifactId>
     <packaging>jar</packaging>
     <name>Server API and DTOs</name>
-    <version>0.6-SNAPSHOT</version>
+    <version>0.6</version>
 
     <properties>
         <spring.version>3.1.0.RELEASE</spring.version>
@@ -30,7 +30,13 @@
         <dependency>
             <groupId>com.inspire-software.lib.dto.geda</groupId>
             <artifactId>geda.core</artifactId>
-            <version>3.0.0</version>
+            <version>3.1.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
