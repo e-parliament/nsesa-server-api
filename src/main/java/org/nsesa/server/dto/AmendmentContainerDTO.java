@@ -19,6 +19,8 @@ import com.inspiresoftware.lib.dto.geda.annotations.DtoVirtualField;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A Data Transfer Object (DTO) for an Amendment entity.
@@ -99,6 +101,12 @@ public class AmendmentContainerDTO implements Serializable {
      * TODO the target references are not yet supported
      */
     private ArrayList<AmendableWidgetReferenceDTO> targetReferences = new ArrayList<AmendableWidgetReferenceDTO>();
+
+    /**
+     * Set of groups this amendment is shared with.
+     */
+    @DtoVirtualField(converter = "groupConvertor")
+    private Set<GroupDTO> groups = new HashSet<GroupDTO>();
 
     public AmendmentContainerDTO() {
     }
@@ -224,5 +232,13 @@ public class AmendmentContainerDTO implements Serializable {
 
     public void setBundledAmendmentContainerIDs(String[] bundledAmendmentContainerIDs) {
         this.bundledAmendmentContainerIDs = bundledAmendmentContainerIDs;
+    }
+
+    public Set<GroupDTO> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(Set<GroupDTO> groups) {
+        this.groups = groups;
     }
 }

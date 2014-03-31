@@ -1,3 +1,9 @@
+Release 0.10 (15-October-2013)
+
+- Added document type
+- Fixed a potential NPE if the type is not set on the document DTO
+- Renamed certain fields so their purpose is reflected better when bundling
+
 Release 0.4 (26-Jun-2013)
 
 - Small correction to make the offset field in the amendment reference nullable

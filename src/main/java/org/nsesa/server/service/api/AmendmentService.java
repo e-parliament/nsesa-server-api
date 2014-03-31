@@ -24,6 +24,10 @@ public interface AmendmentService {
 
     AmendmentContainerDTO getAmendmentContainerVersion(@WebParam(name = "revisionID") String revisionID) throws ResourceNotFoundException;
 
+    AmendmentContainerDTO share(@WebParam(name = "amendmentContainerID") String amendmentContainerID,
+                                @WebParam(name = "groupID") String groupID,
+                                @WebParam(name = "share") Boolean share) throws ResourceNotFoundException;
+
     List<AmendmentContainerDTO> getAmendmentContainersByDocumentAndPerson(
             @WebParam(name = "documentID") String documentID,
             @WebParam(name = "personID") String personID) throws ResourceNotFoundException;
@@ -37,5 +41,6 @@ public interface AmendmentService {
 
     void delete(@WebParam(name = "amendmentContainerID") String amendmentContainerID);
 
-    String updateStatus(@WebParam(name = "revisionID") String revisionID, @WebParam(name = "newStatus") String newStatus) throws StaleResourceException, ResourceNotFoundException;
+    String updateStatus(@WebParam(name = "revisionID") String revisionID,
+                        @WebParam(name = "newStatus") String newStatus) throws StaleResourceException, ResourceNotFoundException;
 }
