@@ -8,10 +8,10 @@
     <artifactId>nsesa-server-api</artifactId>
     <packaging>jar</packaging>
     <name>Server API and DTOs</name>
-    <version>0.6</version>
+    <version>0.7</version>
 
     <properties>
-        <spring.version>3.1.0.RELEASE</spring.version>
+        <spring.version>3.2.12.RELEASE</spring.version>
         <jdk.source>1.6</jdk.source>
         <jdk.target>1.6</jdk.target>
 
@@ -75,7 +75,7 @@
             <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
-                <version>0.9</version>
+                <version>0.10</version>
                 <configuration>
                     <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
                     <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
