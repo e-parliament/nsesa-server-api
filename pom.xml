@@ -8,7 +8,7 @@
     <artifactId>nsesa-server-api</artifactId>
     <packaging>jar</packaging>
     <name>Server API and DTOs</name>
-    <version>0.7</version>
+    <version>0.8-SNAPSHOT</version>
 
     <properties>
         <spring.version>3.2.12.RELEASE</spring.version>
